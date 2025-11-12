@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>HireMind - Home</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/static/style.css">
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+      <div class="container">
+        <a class="navbar-brand" href="/">HireMind</a>
+        <div>
+          <a class="nav-link d-inline" href="/dashboard">Dashboard</a>
+        </div>
+      </div>
+    </nav>
+
+    <main class="container py-5">
+      <div class="row">
+        <div class="col-lg-8 mx-auto">
+          <div class="card p-4 shadow-sm">
+            <h2 class="card-title">Quick Resume Match</h2>
+            <p class="text-muted">Upload a resume and paste a job description to see a quick AI-driven match score.</p>
+
+            <form action="/upload" method="post" enctype="multipart/form-data">
+              <div class="mb-3">
+                <label class="form-label">Job description</label>
+                <textarea name="job_description" class="form-control" rows="4" placeholder="Paste job description here (required)"></textarea>
+              </div>
+
+              <div class="mb-3">
+                <label class="form-label">Resume (text files preferred)</label>
+                <input class="form-control" type="file" name="resume" accept=".txt,.pdf,.doc,.docx">
+              </div>
+
+              <div class="d-flex justify-content-end">
+                <button class="btn btn-primary">Analyze & Upload</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
